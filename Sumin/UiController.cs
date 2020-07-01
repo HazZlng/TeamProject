@@ -283,6 +283,8 @@ public class UiController : MonoBehaviour
             else if (lightTime <= 80.0f)
             {
                 Sky = false;
+                Game.ThemeSound.Stop();
+                Time.timeScale = 0f;
                 End.gameEnd = true;
             }
             #endregion

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using UnityEditorInternal;
+//using System.Threading;
+//using UnityEditorInternal;
 using UnityEngine;
 
 public class PatternMaker : MonoBehaviour
@@ -38,12 +38,13 @@ public class PatternMaker : MonoBehaviour
     public IEnumerator WaitFor2Sec(float sec, int difficulty)
     {
         for (int i = 0; i < difficulty; i++)
-        {         
+        {
+            yield return new WaitForSeconds(sec);
             PatternOn();
             effect.Play();
             yield return new WaitForSeconds(sec);
             SetBlank();
-            yield return new WaitForSeconds(sec);
+            //yield return new WaitForSeconds(sec);
         }
     }
 

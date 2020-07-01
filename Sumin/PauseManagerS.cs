@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,23 +17,24 @@ public class PauseManagerS : MonoBehaviour
         Time.timeScale = 0;
 
         thePauseScreen.SetActive(true);
-        //GP.ThemeSound.Pause();
+        GP.ThemeSound.Pause();
     }
     public void Resume()
     {
-        //GP.ThemeSound.Play();
+        GP.ThemeSound.Play();
         thePauseScreen.SetActive(false);
         Time.timeScale = 1f;
 
     }
     public void GetOut()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Lobby");
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

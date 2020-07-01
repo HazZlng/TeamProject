@@ -11,8 +11,8 @@ public class LevelManager : MonoBehaviour
     public int scorex;
 
     public Text scoreText;
-
     public Text timeText;
+    
     public float time;
     public float timer;
 
@@ -21,9 +21,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1f;
         levelMusic.volume = levelMusic.volume / 4f;
-
         scoreText.text = "Score : " + score;
     }
 

@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//using System.Collections;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,15 +17,13 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 0;
 
         thePauseScreen.SetActive(true);
-        GM.Music.Pause();
+        GM.GMusic.Pause();
     }
     public void Resume()
     {
+        GM.GMusic.Play();
         thePauseScreen.SetActive(false);
-
         Time.timeScale = 1f;
-
-        GM.Music.Play();
     }
     public void GetOut()
     {

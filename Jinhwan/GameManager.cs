@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pm = FindObjectOfType<PatternMaker>();
         Difficulty = 2;
         score = 0;
         sec = 1.0f;
 
         Music.Play();
-        pm = FindObjectOfType<PatternMaker>();
         CallPatternMaker();
     }
 
@@ -35,6 +35,13 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score : " + score;
         stageText.text = "Stage : " + Difficulty;
     }
+
+    public AudioSource GMusic
+    {
+        get { return Music; }
+        set { Music = value; }
+    }
+
     void SetDifficulty()
     {
         Difficulty++;
